@@ -1,0 +1,58 @@
+import { Product } from '@/context/CartContext';
+
+export const products: Product[] = [
+  {
+    id: '1',
+    name: 'Golden Sunrise',
+    flavor: 'Turmeric & Ginger',
+    price: 8.99,
+    tag: 'energizing',
+    image: '/placeholder.svg',
+    description: 'A warming blend with anti-inflammatory turmeric and spicy ginger root.',
+  },
+  {
+    id: '2',
+    name: 'Lavender Dreams',
+    flavor: 'Lavender & Chamomile',
+    price: 8.99,
+    tag: 'calming',
+    image: '/placeholder.svg',
+    description: 'Soothing florals create a moment of tranquility in every sip.',
+  },
+  {
+    id: '3',
+    name: 'Ocean Breeze',
+    flavor: 'Blue Spirulina & Mint',
+    price: 9.49,
+    tag: 'refreshing',
+    image: '/placeholder.svg',
+    description: 'Cool mint meets superfood spirulina for ultimate refreshment.',
+  },
+  {
+    id: '4',
+    name: 'Forest Shield',
+    flavor: 'Elderberry & Echinacea',
+    price: 9.49,
+    tag: 'immunity',
+    image: '/placeholder.svg',
+    description: 'Ancient botanicals fortify your natural defenses.',
+  },
+  {
+    id: '5',
+    name: 'Rose Garden',
+    flavor: 'Rose & Hibiscus',
+    price: 8.99,
+    tag: 'calming',
+    image: '/placeholder.svg',
+    description: 'Delicate rose petals dance with tart hibiscus blooms.',
+  },
+  {
+    id: '6',
+    name: 'Citrus Burst',
+    flavor: 'Lemon & Cayenne',
+    price: 8.49,
+    tag: 'energizing',
+    image: '/placeholder.svg',
+    description: 'A zesty kick to awaken your senses and ignite your day.',
+  },
+];
