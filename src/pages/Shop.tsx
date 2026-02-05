@@ -6,6 +6,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CartSheet from '@/components/CartSheet';
 import ProductCard from '@/components/ProductCard';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import {
@@ -208,6 +209,7 @@ const Shop = () => {
 
       <Footer />
       <CartSheet />
+      <WhatsAppWidget />
     </div>
   );
 };

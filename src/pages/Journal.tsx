@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CartSheet from '@/components/CartSheet';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 import { Calendar, Clock, User, Tag, Leaf, Heart, Sparkles, Coffee, BookOpen, Sun } from 'lucide-react';
 
 const JournalPage = () => {
@@ -216,6 +217,7 @@ const JournalPage = () => {
       </main>
       <Footer />
       <CartSheet />
+      <WhatsAppWidget />
     </div>
   );
 };

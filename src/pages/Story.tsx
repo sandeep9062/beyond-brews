@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CartSheet from '@/components/CartSheet';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 import { Leaf, Heart, Sparkles, Globe, Star, Award, Users, BookOpen, Coffee, Sun } from 'lucide-react';
 
 const StoryPage = () => {
@@ -259,6 +260,7 @@ const StoryPage = () => {
       </main>
       <Footer />
       <CartSheet />
+      <WhatsAppWidget />
     </div>
   );
 };

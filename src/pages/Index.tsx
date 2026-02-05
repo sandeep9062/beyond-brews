@@ -6,6 +6,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import SocialWall from '@/components/SocialWall';
 import Footer from '@/components/Footer';
 import CartSheet from '@/components/CartSheet';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       </main>
       <Footer />
       <CartSheet />
+      <WhatsAppWidget />
     </div>
   );
 };

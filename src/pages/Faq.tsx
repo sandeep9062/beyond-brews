@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CartSheet from '@/components/CartSheet';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 const Faq = () => {
   const faqs = [
     {
@@ -113,7 +114,9 @@ const Faq = () => {
     </div>
 
       <CartSheet />
-        <Footer />  </>
+        <Footer />
+        <WhatsAppWidget />
+      </>
   );
 };
 

@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CartSheet from '@/components/CartSheet';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 import { Leaf, FlaskConical, Clock, Sparkles, Thermometer, Droplets, Sun, Moon, Heart } from 'lucide-react';
 
 const processSteps = [
@@ -281,6 +282,7 @@ const ProcessPage = () => {
       </main>
       <Footer />
       <CartSheet />
+      <WhatsAppWidget />
     </div>
   );
 };
