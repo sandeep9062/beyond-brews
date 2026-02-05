@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, Menu, X, ChevronDown } from 'lucide-react';
+import { ShoppingBag, Menu, X, ChevronDown, User } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import {
   DropdownMenu,
@@ -32,34 +32,61 @@ const Navigation = () => {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-card border-border pebble-sm shadow-elevated">
-                <DropdownMenuItem className="nav-link cursor-pointer hover:bg-muted">
-                  All Flavors
+                <DropdownMenuItem asChild>
+                  <Link to="/shop" className="nav-link cursor-pointer hover:bg-muted">
+                    All Flavors
+                  </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="nav-link cursor-pointer hover:bg-muted">
-                  Energizing
+                <DropdownMenuItem asChild>
+                  <Link to="/shop?tag=energizing" className="nav-link cursor-pointer hover:bg-muted">
+                    Energizing
+                  </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="nav-link cursor-pointer hover:bg-muted">
-                  Calming
+                <DropdownMenuItem asChild>
+                  <Link to="/shop?tag=calming" className="nav-link cursor-pointer hover:bg-muted">
+                    Calming
+                  </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="nav-link cursor-pointer hover:bg-muted">
-                  Bundles
+                <DropdownMenuItem asChild>
+                  <Link to="/shop?tag=refreshing" className="nav-link cursor-pointer hover:bg-muted">
+                    Refreshing
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/shop?tag=immunity" className="nav-link cursor-pointer hover:bg-muted">
+                    Immunity
+                  </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/" className="nav-link hover:text-moss transition-colors">
+            <Link to="/story" className="nav-link hover:text-moss transition-colors">
               Our Story
             </Link>
-            <Link to="/" className="nav-link hover:text-moss transition-colors">
+            <Link to="/process" className="nav-link hover:text-moss transition-colors">
               Process
             </Link>
-            <Link to="/" className="nav-link hover:text-moss transition-colors">
+            
+            <Link to="/journal" className="nav-link hover:text-moss transition-colors">
+              Journal
+            </Link>
+            <Link to="/faq" className="nav-link hover:text-moss transition-colors">
+              FAQ
+            </Link>
+
+
+            <Link to="/contact" className="nav-link hover:text-moss transition-colors">
               Contact
             </Link>
           </div>
 
-          {/* Cart Button */}
+          {/* User Account & Cart */}
           <div className="flex items-center gap-4">
+            <Link to="/login" className="hidden md:flex items-center gap-2 nav-link hover:text-moss transition-colors">
+              <User className="h-4 w-4" />
+              <span>Account</span>
+            </Link>
+            
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 hover:bg-muted rounded-full transition-colors"
@@ -86,17 +113,29 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden pt-6 pb-4 animate-fade-in">
             <div className="flex flex-col gap-4">
-              <Link to="/" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+              <Link to="/shop" className="nav-link py-2" onClick={() => setIsOpen(false)}>
                 Shop All
               </Link>
-              <Link to="/" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+              <Link to="/story" className="nav-link py-2" onClick={() => setIsOpen(false)}>
                 Our Story
               </Link>
-              <Link to="/" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+              <Link to="/process" className="nav-link py-2" onClick={() => setIsOpen(false)}>
                 Process
               </Link>
-              <Link to="/" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+              <Link to="/contact" className="nav-link py-2" onClick={() => setIsOpen(false)}>
                 Contact
+              </Link>
+              <Link to="/journal" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+                Journal
+              </Link>
+              <Link to="/faq" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+                FAQ
+              </Link>
+              <Link to="/login" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+                Login
+              </Link>
+              <Link to="/signup" className="nav-link py-2" onClick={() => setIsOpen(false)}>
+                Sign Up
               </Link>
             </div>
           </div>

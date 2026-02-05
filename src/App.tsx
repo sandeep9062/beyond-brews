@@ -6,6 +6,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Process from "./pages/Process";
+import Story from "./pages/Story";
+import Contact from "./pages/Contact";
+import Shop from "./pages/Shop";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
+import Journal from "./pages/Journal";
+import Faq from "./pages/Faq";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +27,15 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/story" element={<Story />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/journal" element={<Journal />} />
+            <Route path="/faq" element={<Faq />} />{" "}
+            <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
