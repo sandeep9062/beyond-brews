@@ -1,8 +1,95 @@
 "use client";
 
+import { useState } from 'react';
 import { Calendar, Clock, User, Tag, Leaf, Heart, Sparkles, Coffee, BookOpen, Sun } from 'lucide-react';
 
+// Define types for journal post
+interface JournalPost {
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  author: string;
+  image: string;
+  icon: React.ElementType;
+}
+
 const JournalPage = () => {
+  const [activeCategory, setActiveCategory] = useState<string>('All Posts');
+
+  // Journal posts data
+  const journalPosts: JournalPost[] = [
+    {
+      title: "The Art of Kombucha Fermentation",
+      excerpt: "Discover the delicate balance of time, temperature, and ingredients that goes into creating the perfect batch of BeyondBrews kombucha.",
+      category: "Brewing Tips",
+      date: "November 15, 2024",
+      readTime: "5 min read",
+      author: "Emma Chen",
+      image: "https://images.unsplash.com/photo-1549488344-126a7977724d?q=80&w=2070&auto=format&fit=crop",
+      icon: Coffee
+    },
+    {
+      title: "Sourcing the Finest Organic Ingredients",
+      excerpt: "We take you on a journey to the farms where we source our premium organic tea leaves, herbs, and fruits.",
+      category: "Ingredients",
+      date: "November 10, 2024",
+      readTime: "4 min read",
+      author: "Sarah Johnson",
+      image: "https://images.unsplash.com/photo-1495521821755-451d773a178f?q=80&w=2070&auto=format&fit=crop",
+      icon: Leaf
+    },
+    {
+      title: "Our Zero-Waste Initiatives",
+      excerpt: "Learn how BeyondBrews is reducing our environmental impact through sustainable packaging and waste reduction programs.",
+      category: "Sustainability",
+      date: "November 5, 2024",
+      readTime: "6 min read",
+      author: "Michael Chen",
+      image: "https://images.unsplash.com/photo-1526304640151-b55f76806d4a?q=80&w=2070&auto=format&fit=crop",
+      icon: Sparkles
+    },
+    {
+      title: "Kombucha and Wellness: A Perfect Pair",
+      excerpt: "Explore the health benefits of kombucha and how it can be incorporated into a balanced wellness routine.",
+      category: "Community",
+      date: "October 30, 2024",
+      readTime: "7 min read",
+      author: "Dr. Emily Rodriguez",
+      image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop",
+      icon: Heart
+    },
+    {
+      title: "Holiday Brewing Workshop Recap",
+      excerpt: "A look back at our recent holiday brewing workshop where participants learned to make their own kombucha at home.",
+      category: "Events",
+      date: "October 25, 2024",
+      readTime: "3 min read",
+      author: "Lisa Martinez",
+      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2070&auto=format&fit=crop",
+      icon: BookOpen
+    },
+    {
+      title: "New Flavor Release: Winter Spice",
+      excerpt: "Introducing our newest seasonal flavor, Winter Spice, featuring warm spices and organic citrus.",
+      category: "Brewing Tips",
+      date: "October 20, 2024",
+      readTime: "4 min read",
+      author: "Emma Chen",
+      image: "https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?q=80&w=2070&auto=format&fit=crop",
+      icon: Sun
+    }
+  ];
+
+  // Filter posts based on active category
+  const filteredPosts = activeCategory === 'All Posts' 
+    ? journalPosts 
+    : journalPosts.filter(post => post.category === activeCategory);
+
+  // Category options
+  const categories = ['All Posts', 'Brewing Tips', 'Ingredients', 'Community', 'Sustainability', 'Events'];
+
   return (
     <div className="grain-overlay min-h-screen">
 
@@ -28,90 +115,24 @@ const JournalPage = () => {
         <section className="py-16">
           <div className="container mx-auto px-6">
             <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <button className="px-6 py-2 bg-moss text-white rounded-full hover:bg-moss/90 transition-colors font-medium">
-                All Posts
-              </button>
-              <button className="px-6 py-2 border border-moss text-moss rounded-full hover:bg-moss/10 transition-colors font-medium">
-                Brewing Tips
-              </button>
-              <button className="px-6 py-2 border border-moss text-moss rounded-full hover:bg-moss/10 transition-colors font-medium">
-                Ingredients
-              </button>
-              <button className="px-6 py-2 border border-moss text-moss rounded-full hover:bg-moss/10 transition-colors font-medium">
-                Community
-              </button>
-              <button className="px-6 py-2 border border-moss text-moss rounded-full hover:bg-moss/10 transition-colors font-medium">
-                Sustainability
-              </button>
-              <button className="px-6 py-2 border border-moss text-moss rounded-full hover:bg-moss/10 transition-colors font-medium">
-                Events
-              </button>
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`px-6 py-2 rounded-full transition-colors font-medium ${
+                    activeCategory === category
+                      ? 'bg-moss text-white hover:bg-moss/90'
+                      : 'border border-moss text-moss hover:bg-moss/10'
+                  }`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
 
             {/* Journal Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "The Art of Kombucha Fermentation",
-                  excerpt: "Discover the delicate balance of time, temperature, and ingredients that goes into creating the perfect batch of BeyondBrews kombucha.",
-                  category: "Brewing Tips",
-                  date: "November 15, 2024",
-                  readTime: "5 min read",
-                  author: "Emma Chen",
-                  image: "https://images.unsplash.com/photo-1549488344-126a7977724d?q=80&w=2070&auto=format&fit=crop",
-                  icon: Coffee
-                },
-                {
-                  title: "Sourcing the Finest Organic Ingredients",
-                  excerpt: "We take you on a journey to the farms where we source our premium organic tea leaves, herbs, and fruits.",
-                  category: "Ingredients",
-                  date: "November 10, 2024",
-                  readTime: "4 min read",
-                  author: "Sarah Johnson",
-                  image: "https://images.unsplash.com/photo-1495521821755-451d773a178f?q=80&w=2070&auto=format&fit=crop",
-                  icon: Leaf
-                },
-                {
-                  title: "Our Zero-Waste Initiatives",
-                  excerpt: "Learn how BeyondBrews is reducing our environmental impact through sustainable packaging and waste reduction programs.",
-                  category: "Sustainability",
-                  date: "November 5, 2024",
-                  readTime: "6 min read",
-                  author: "Michael Chen",
-                  image: "https://images.unsplash.com/photo-1526304640151-b55f76806d4a?q=80&w=2070&auto=format&fit=crop",
-                  icon: Sparkles
-                },
-                {
-                  title: "Kombucha and Wellness: A Perfect Pair",
-                  excerpt: "Explore the health benefits of kombucha and how it can be incorporated into a balanced wellness routine.",
-                  category: "Community",
-                  date: "October 30, 2024",
-                  readTime: "7 min read",
-                  author: "Dr. Emily Rodriguez",
-                  image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop",
-                  icon: Heart
-                },
-                {
-                  title: "Holiday Brewing Workshop Recap",
-                  excerpt: "A look back at our recent holiday brewing workshop where participants learned to make their own kombucha at home.",
-                  category: "Events",
-                  date: "October 25, 2024",
-                  readTime: "3 min read",
-                  author: "Lisa Martinez",
-                  image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2070&auto=format&fit=crop",
-                  icon: BookOpen
-                },
-                {
-                  title: "New Flavor Release: Winter Spice",
-                  excerpt: "Introducing our newest seasonal flavor, Winter Spice, featuring warm spices and organic citrus.",
-                  category: "Brewing Tips",
-                  date: "October 20, 2024",
-                  readTime: "4 min read",
-                  author: "Emma Chen",
-                  image: "https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?q=80&w=2070&auto=format&fit=crop",
-                  icon: Sun
-                }
-              ].map((post, index) => {
+              {filteredPosts.map((post, index) => {
                 const Icon = post.icon;
 
                 return (
@@ -162,6 +183,15 @@ const JournalPage = () => {
                 );
               })}
             </div>
+
+            {/* No Posts Found Message */}
+            {filteredPosts.length === 0 && (
+              <div className="text-center py-20">
+                <p className="body-lg text-muted-foreground">
+                  No posts found in this category. Please try another category.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
