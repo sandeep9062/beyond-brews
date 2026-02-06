@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/forgotpassword/page": "app/forgotpassword/page.js",
+  "/journal/page": "app/journal/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/process/page": "app/process/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/shop/page": "app/shop/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/story/page": "app/story/page.js"
+}

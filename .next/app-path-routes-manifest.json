@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/contact/page": "/contact",
+  "/faq/page": "/faq",
+  "/forgotpassword/page": "/forgotpassword",
+  "/journal/page": "/journal",
+  "/login/page": "/login",
+  "/page": "/",
+  "/process/page": "/process",
+  "/profile/page": "/profile",
+  "/shop/page": "/shop",
+  "/signup/page": "/signup",
+  "/story/page": "/story"
+}
