@@ -24,8 +24,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+
 
 
 const Profile = () => {
@@ -107,8 +106,6 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-
-      
       <main className="container mx-auto px-6 py-24 md:py-32">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}
@@ -439,9 +436,6 @@ const Profile = () => {
           </div>
         </div>
       </main>
-      
-
-   
     </div>
   );
 };
