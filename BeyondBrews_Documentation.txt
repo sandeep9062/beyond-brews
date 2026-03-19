@@ -1,32 +1,26 @@
-# BeyondBrews - Premium Kombucha E-Commerce Platform
+# Beyond Brews - Project Documentation
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-beyond--brews.vercel.app-brightgreen)](https://beyond-brews.vercel.app)
-[![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.17-38B2AC)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-## 📋 Table of Contents
+LIVE LINK :- https://beyond-brews.vercel.app
 
-- [Project Overview](#-project-overview)
-- [Technology Stack](#-technology-stack)
-- [Project Architecture](#-project-architecture)
-- [Features](#-features)
-- [File Structure](#-file-structure)
-- [Components](#-components)
-- [Data Management](#-data-management)
-- [Styling System](#-styling-system)
-- [State Management](#-state-management)
-- [Routing](#-routing)
-- [Performance Optimizations](#-performance-optimizations)
-- [Development Setup](#-development-setup)
-- [Deployment](#-deployment)
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Technology Stack](#technology-stack)
+3. [Project Architecture](#project-architecture)
+4. [Features](#features)
+5. [File Structure](#file-structure)
+6. [Components](#components)
+7. [Data Management](#data-management)
+8. [Styling System](#styling-system)
+9. [State Management](#state-management)
+10. [Routing](#routing)
+11. [Performance Optimizations](#performance-optimizations)
+12. [Deployment](#deployment)
+13. [Development Setup](#development-setup)
 
----
+## Project Overview
 
-## 🎯 Project Overview
-
-**BeyondBrews** is a modern e-commerce website for a premium kombucha brand specializing in handcrafted, organic fermented teas. The project showcases a sophisticated blend of modern web technologies to create an engaging shopping experience that emphasizes the brand's commitment to quality, sustainability, and wellness.
+**Beyond Brews** is a modern e-commerce website for a premium kombucha brand specializing in handcrafted, organic fermented teas. The project showcases a sophisticated blend of modern web technologies to create an engaging shopping experience that emphasizes the brand's commitment to quality, sustainability, and wellness.
 
 ### Brand Identity
 - **Product**: Small-batch, organic kombucha with unique flavor profiles
@@ -41,23 +35,20 @@
 - Sustainable practices
 - Unique flavor profiles (Energizing, Calming, Refreshing, Immunity)
 
----
-
-## 🛠 Technology Stack
+## Technology Stack
 
 ### Core Technologies
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Next.js** | 16.1.6 | React framework with App Router |
-| **TypeScript** | 5.9.3 | Type-safe JavaScript |
-| **React** | 19.2.4 | UI component library |
-| **Tailwind CSS** | 3.4.17 | Utility-first CSS framework |
-| **Radix UI** | Latest | Accessible UI primitives |
-| **shadcn/ui** | Latest | Pre-built component library |
-| **TanStack Query** | 5.90.20 | Server state management |
-| **Lucide React** | 0.563.0 | Icon library |
+- **Framework**: Next.js 16.1.6 (App Router)
+- **Language**: TypeScript 5.9.3
+- **Runtime**: Node.js with Bun package manager
+- **Styling**: Tailwind CSS 3.4.17 with custom design system
+- **UI Components**: Radix UI + shadcn/ui
+- **State Management**: React Context API
+- **Data Fetching**: TanStack Query (React Query)
+- **Icons**: Lucide React
 
 ### Development Tools
+- **TypeScript**: Full type safety and development experience
 - **ESLint**: Code quality and consistency
 - **PostCSS**: CSS processing
 - **Autoprefixer**: CSS vendor prefixes
@@ -65,11 +56,9 @@
 
 ### Package Management
 - **Bun**: Fast JavaScript runtime and package manager
-- **npm**: Alternative package manager support
+- **Bun.lockb**: Lockfile for deterministic builds
 
----
-
-## 🏗 Project Architecture
+## Project Architecture
 
 ### Next.js App Router Structure
 ```
@@ -90,20 +79,18 @@ app/
 ```
 
 ### Component Architecture
-- **Atomic Design Principles**: Organized in `components/ui` (atomic), `components` (molecules/organisms)
+- **Atomic Design Principles**: Organized in components/ui (atomic), components (molecules/organisms)
 - **Reusable Components**: Product cards, navigation, modals, forms
 - **Context Providers**: Cart management, theme, user state
 - **Custom Hooks**: Business logic abstraction
 
 ### Data Architecture
-- **Static Data**: Product catalog in `data/products.ts`
+- **Static Data**: Product catalog in data/products.ts
 - **Client State**: Cart, user preferences, UI state
 - **Server State**: Product listings, user data (via TanStack Query)
 - **Local Storage**: Persistent cart data
 
----
-
-## ✨ Features
+## Features
 
 ### E-commerce Features
 - **Product Catalog**: Filterable shop with category-based browsing
@@ -137,9 +124,7 @@ app/
 - **Error Handling**: Graceful error states
 - **Loading States**: Skeleton screens and spinners
 
----
-
-## 📁 File Structure
+## File Structure
 
 ### Root Level
 ```
@@ -175,7 +160,8 @@ app/
 ├── profile/           # User profile
 ├── shop/              # E-commerce
 ├── signup/            # Registration
-└── story/             # Brand story
+├── story/             # Brand story
+└── [page]/            # Dynamic pages
 ```
 
 ### Components Directory
@@ -219,8 +205,7 @@ data/
 ### Hooks Directory
 ```
 hooks/
-├── use-mobile.tsx     # Mobile device detection
-└── use-toast.ts       # Toast notification hook
+└── use-mobile.tsx     # Mobile device detection
 ```
 
 ### Public Directory
@@ -232,9 +217,7 @@ public/
 └── robots.txt         # SEO configuration
 ```
 
----
-
-## 🧩 Components
+## Components
 
 ### Core Components
 
@@ -288,9 +271,7 @@ public/
 - **RadioGroup**: Multiple choice selection
 - **Form**: Form validation and submission
 
----
-
-## 📊 Data Management
+## Data Management
 
 ### Product Data Structure
 ```typescript
@@ -321,14 +302,12 @@ interface CartContextType {
 ```
 
 ### Data Flow
-1. **Static Data**: Products loaded from `data/products.ts`
+1. **Static Data**: Products loaded from data/products.ts
 2. **Client State**: Cart managed via Context API
 3. **Server State**: Future API integration via TanStack Query
 4. **Local Storage**: Cart persistence across sessions
 
----
-
-## 🎨 Styling System
+## Styling System
 
 ### Design Tokens
 - **Color Palette**: Organic luxury with moss green, burnt sienna, charcoal
@@ -339,7 +318,7 @@ interface CartContextType {
 
 ### CSS Architecture
 - **Tailwind CSS**: Utility-first approach with custom configuration
-- **CSS-in-JS**: Component-specific styles in `globals.css`
+- **CSS-in-JS**: Component-specific styles in globals.css
 - **Design System**: Consistent tokens and spacing
 - **Responsive**: Mobile-first responsive design
 
@@ -370,9 +349,7 @@ interface CartContextType {
 - **Background**: Eggshell (40 20% 96%)
 - **Text**: High contrast for accessibility
 
----
-
-## 🔄 State Management
+## State Management
 
 ### Context API Implementation
 - **CartContext**: Shopping cart functionality
@@ -390,13 +367,11 @@ interface CartContextType {
 - **Zustand/Jotai**: Alternative state solutions
 - **Redux Toolkit**: For complex state requirements
 
----
-
-## 🛣 Routing
+## Routing
 
 ### Next.js App Router
 - **File-based Routing**: Automatic route generation
-- **Dynamic Routes**: `[slug]` for dynamic content
+- **Dynamic Routes**: [slug] for dynamic content
 - **Nested Routes**: Organized page structure
 - **Layout System**: Shared layouts and metadata
 
@@ -421,9 +396,7 @@ interface CartContextType {
 - **Mobile Navigation**: Hamburger menu with dropdowns
 - **Breadcrumbs**: Page hierarchy navigation
 
----
-
-## ⚡ Performance Optimizations
+## Performance Optimizations
 
 ### Image Optimization
 - **Next.js Image**: Automatic optimization and lazy loading
@@ -448,9 +421,37 @@ interface CartContextType {
 - **Compression**: Gzip/Brotli compression
 - **CDN**: Static asset delivery
 
----
+## Deployment
 
-## 🚀 Development Setup
+### Build Process
+```bash
+# Development
+npm run dev
+
+# Production Build
+npm run build
+
+# Production Start
+npm run start
+```
+
+### Environment Configuration
+- **Next.js Config**: Image optimization, environment variables
+- **Tailwind Config**: Design system and plugins
+- **TypeScript Config**: Type checking and compilation
+
+### Deployment Options
+- **Vercel**: Native Next.js deployment
+- **Netlify**: Static site generation
+- **AWS Amplify**: Cloud deployment
+- **Docker**: Containerized deployment
+
+### Performance Monitoring
+- **Lighthouse**: Performance auditing
+- **Web Vitals**: Core web vitals tracking
+- **Error Tracking**: Client-side error monitoring
+
+## Development Setup
 
 ### Prerequisites
 - **Node.js**: Version 18 or higher
@@ -489,41 +490,7 @@ bun run dev
 - **Browser DevTools**: Chrome/Firefox developer tools
 - **Design Tools**: Figma for design references
 
----
-
-## 🌐 Deployment
-
-### Build Process
-```bash
-# Development
-npm run dev
-
-# Production Build
-npm run build
-
-# Production Start
-npm run start
-```
-
-### Environment Configuration
-- **Next.js Config**: Image optimization, environment variables
-- **Tailwind Config**: Design system and plugins
-- **TypeScript Config**: Type checking and compilation
-
-### Deployment Options
-- **Vercel**: Native Next.js deployment
-- **Netlify**: Static site generation
-- **AWS Amplify**: Cloud deployment
-- **Docker**: Containerized deployment
-
-### Performance Monitoring
-- **Lighthouse**: Performance auditing
-- **Web Vitals**: Core web vitals tracking
-- **Error Tracking**: Client-side error monitoring
-
----
-
-## 🔮 Future Enhancements
+## Future Enhancements
 
 ### E-commerce Features
 - **Payment Integration**: Stripe, PayPal integration
@@ -548,36 +515,10 @@ npm run start
 - **Touch Optimization**: Mobile-specific interactions
 - **Performance**: Mobile-first optimization
 
----
+## Conclusion
 
-## 📝 License
+Beyond Brews represents a modern, well-architected e-commerce solution built with cutting-edge technologies. The project demonstrates best practices in React development, TypeScript usage, and modern web development patterns. The modular architecture, comprehensive feature set, and attention to user experience make it a solid foundation for a successful e-commerce business.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The codebase is well-organized, maintainable, and scalable, with clear separation of concerns and consistent patterns throughout. The combination of Next.js, TypeScript, and Tailwind CSS provides a robust foundation for both development efficiency and production performance.
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📞 Contact
-
-For questions or support, please contact:
-- **Email**: info@beyondbrews.com
-- **Website**: https://beyond-brews.vercel.app
-
----
-
-## 🙏 Acknowledgments
-
-- **shadcn/ui**: For the beautiful component library
-- **Radix UI**: For accessible UI primitives
-- **Tailwind CSS**: For the utility-first CSS framework
-- **Next.js**: For the amazing React framework
-- **Vercel**: For seamless deployment
-
----
-
-**BeyondBrews** - Nature, Fermented. 🍵
+For developers working on this project, the documentation provides a comprehensive guide to understanding the architecture, features, and development practices. The modular component system and clear data flow make it easy to extend and maintain the application as business requirements evolve.
